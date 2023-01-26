@@ -1,0 +1,10 @@
+.progress__bar-container {
+
+  display: flex;
+  justify-content: center;
+}
+
+.progress__bar {
+  width:80%;
+  padding: 2rem 0;
+}
