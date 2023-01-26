@@ -12,7 +12,10 @@ export default function SignIn() {
   const [progress, setProgress] = useState(0);
 
   const handleProgress = () => {
+    // Essa tipagem para Record é precisa para a variavel aceitar tipos  GENERICos
     const properties = { name: 33.33, age: 33.33, email: 33.33 } as Record<string, number>;
+    // Atribui o valor 33.33 na mao, vou pensar outro modo mais dinamico e reutilizavel de fazer isso
+
     let progress = 0;
 
     for (const property in properties) {
@@ -22,9 +25,10 @@ export default function SignIn() {
     }
     setProgress(progress);
   }
-
+  // Aqui eu tipei o event como ChangeEvent(Evento de alteracao do DOM) apontando para os elementos de INPUT do DOM
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
+    // O operador spread ... está agrupando os estados atuais do usuário e adicionando o novo valor a ele.
     setUser({ ...user, [id]: value });
     handleProgress();
   }
